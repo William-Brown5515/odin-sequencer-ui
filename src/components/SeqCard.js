@@ -1,11 +1,15 @@
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
-const SeqCard =  ({sequence}) => {
+const SeqCard =  ({sequence, header}) => {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{sequence}</Card.Title>
-        <Card.Text>{Object.values(sequence)}</Card.Text>
+        <Card.Title>{header}</Card.Title>
+        <Card.Text>
+          <Button>Execute</Button>
+          <Button>Parameters</Button>
+        </Card.Text>
       </Card.Body>
     </Card>
   )

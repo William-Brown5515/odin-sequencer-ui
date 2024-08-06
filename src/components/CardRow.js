@@ -23,8 +23,8 @@ const CardRow = ({sequences}) => {
     //     </Row>
     // );
     sequences = JSON.parse(sequences)
-    const listItems = (Object.values(sequences)).map((sequence) => 
-        <SeqCard sequence={JSON.stringify(sequence)}></SeqCard>
+    const listItems = (Object.entries(sequences)).flatMap(([sequenceKey, sequence]) => 
+        <SeqCard key={sequenceKey} header={sequenceKey} sequence={JSON.stringify(sequence)}></SeqCard>
     );
     return (listItems)      
 };

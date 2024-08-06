@@ -2,6 +2,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import CardRow from './components/CardRow';
 import { useState } from 'react';
+import AccItems from './components/AccItems'
 
 const sequences = {
   example: 'one',
@@ -46,32 +47,20 @@ function BasicExample() {
       spi_read: {
         num_bytes: 38,
         vals: 64
+      }, 
+      spi_write: {
+        abc : 20
       }
     }
   }))
-  console.log("1", sequence_modules)
-  console.log("2", JSON.stringify(sequence_modules))
-  const test = JSON.stringify(sequence_modules)
-  console.log("3", JSON.parse(test))
+  // console.log("1", sequence_modules)
+  // console.log("2", JSON.stringify(sequence_modules))
+  // const test = JSON.stringify(sequence_modules)
+  // console.log("3", JSON.parse(test))
 
   return (
-    <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          {/* <CardRow sequences = {sequences}></CardRow> */}
-          {/* <CardRow sequences = {Object.values(sequence_modules)}></CardRow> */}
-          <CardRow sequences = {sequence_modules}></CardRow>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          {/* <CardRow sequences = {sequences}></CardRow> */}
-          {/* <CardRow sequences = {Object.values(sequence_modules)}></CardRow> */}
-          <CardRow sequences = {sequence_modules}></CardRow>
-        </Accordion.Body>
-      </Accordion.Item>
+    <Accordion>
+      <AccItems sequence_modules={sequence_modules}></AccItems>
     </Accordion>
   );
 }
