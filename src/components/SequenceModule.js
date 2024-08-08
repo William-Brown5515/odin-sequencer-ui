@@ -1,17 +1,21 @@
 import Accordion from 'react-bootstrap/Accordion'
 import CardRow from './CardRow'
+import { Row } from 'react-bootstrap'
 
-const AccItem = ({sequences, header}) => {
+const SequenceModule = ({sequences, header}) => {
     console.log("ACC ITEM", sequences, header)
     return (
         <Accordion.Item>
             <Accordion.Header>{header}</Accordion.Header>
             <Accordion.Body>
-                <CardRow sequences={sequences}></CardRow>
+                <Row>
+                    <CardRow sequences={sequences}></CardRow>
+                </Row>
             </Accordion.Body>
         </Accordion.Item>
     )
-
 }
 
-export default AccItem
+//Look into odin-react title card
+
+export default SequenceModule
