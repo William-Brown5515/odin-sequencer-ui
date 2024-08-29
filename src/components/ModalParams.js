@@ -1,6 +1,6 @@
-import { Button } from "bootstrap"
 import { Row } from "react-bootstrap"
 
+/* Constructing the labels and input boxes for the parameters inside the modal. */
 
 const ModalParams = ({sequence}) => {
     const params = JSON.parse(sequence)
@@ -9,9 +9,9 @@ const ModalParams = ({sequence}) => {
         return (
         <>
             <Row>
-            <label>{paramKey}:    
-            <input name={paramKey} defaultValue={param}></input>
-            </label>
+                <label>{paramKey}:    
+                    <input name={paramKey} defaultValue={param}></input>
+                </label>
             </Row>
         </>
         )
